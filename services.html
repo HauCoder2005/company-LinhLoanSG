@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dịch vụ - LinhLoanSG</title>
+    <!-- Thêm meta tags cho SEO -->
+    <meta
+      name="description"
+      content="Linh Loan Sài Gòn cung cấp vật liệu xây dựng chất lượng cao: xi măng, sắt thép, gạch, đá, cát, sỏi, sơn và thiết bị vệ sinh tại Đà Nẵng. Giao hàng nhanh, giá cạnh tranh."
+    />
+    <meta
+      name="keywords"
+      content="vật liệu xây dựng, xi măng, sắt thép, gạch xây dựng, sơn nội thất, thiết bị vệ sinh, cho thuê máy móc xây dựng, Đà Nẵng"
+    />
+    <meta name="author" content="Linh Loan Sài Gòn" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Font và Icon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        color: #333;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: linear-gradient(90deg, #0d6efd, #0056b3);
+        color: #fff; /* Đảm bảo màu chữ mặc định của header là trắng */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h2 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        margin: 0;
+        color: #fff; /* Đảm bảo tiêu đề LinhLoanSG là trắng */
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+         text-decoration: none;
+        gap: 5px;
+        color: #fff; /* Đảm bảo các mục menu là trắng */
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #ffc107; /* Giữ màu vàng khi hover */
+        transform: translateY(-2px);
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff; /* Đảm bảo icon toggle là trắng */
+      }
+
+      /* Section Services */
+      #services {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        background: linear-gradient(180deg, #f8f9fa 0%, #e4f0ff 100%);
+        border-radius: 12px;
+      }
+
+      #services h2 {
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 50px;
+        font-size: 32px;
+        color: #0d3b66;
+        position: relative;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+
+      .service-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        position: relative;
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      .service-card.show {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.8s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        background: #e4f0ff;
+      }
+
+      .service-card i {
+        color: #007bff;
+        margin-bottom: 15px;
+      }
+
+      .service-card h3 {
+        color: #0d3b66;
+        margin-bottom: 12px;
+        font-size: 20px;
+      }
+
+      .service-card p {
+        color: #555;
+        font-size: 14px;
+        min-height: 60px;
+      }
+
+      .service-card button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      .service-card button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      .badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #ff5722;
+        color: #fff;
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 6px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #moreBtn {
+        display: block;
+        margin: 30px auto 0;
+        padding: 10px 25px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #moreBtn:hover {
+        background-color: #0056b3;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #0d6efd;
+        color: #fff;
+        margin-top: 40px;
+      }
+
+      footer h2 {
+        font-family: "Oswald", sans-serif;
+        margin-bottom: 10px;
+      }
+
+      footer p {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      footer a {
+        color: #ffc107;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Banner dịch vụ */
+      .service-banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://via.placeholder.com/1200x300?text=Vật+Liệu+Xây+Dựng")
+            center/cover no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 60px 20px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .service-banner h1 {
+        font-family: "Oswald", sans-serif;
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .service-banner p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Animation cho tiêu đề */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Floating Action Button */
+      .contact-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #28a745;
+        color: #fff;
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+
+      .contact-btn:hover {
+        background-color: #218838;
+        transform: scale(1.1);
+      }
+
+      /* Form liên hệ nhanh */
+      .contact-form {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .contact-form h3 {
+        font-family: "Oswald", sans-serif;
+        color: #0d3b66;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .contact-form button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .contact-form button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Testimonial Section */
+      .testimonials {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .testimonials h2 {
+        font-family: "Oswald", sans-serif;
+        text-align: center;
+        color: #0d3b66;
+        margin-bottom: 30px;
+      }
+
+      .testimonial-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      .testimonial-card p {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-card span {
+        font-weight: bold;
+        color: #0d3b66;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+          position: absolute;
+          top: 20px;
+          right: 25px;
+          z-index: 1100;
+        }
+
+        nav {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background: linear-gradient(90deg, #0d6efd, #0056b3);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav.active {
+          max-height: 300px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        nav ul li a {
+          padding: 10px 20px;
+          font-size: 18px;
+          color: #fff; /* Đảm bảo màu chữ trong menu mobile là trắng */
+          text-align: center;
+        }
+
+        nav ul li a:hover {
+          background: #0056b3;
+          color: #ffc107;
+          transform: none;
+        }
+
+        .service-banner h1 {
+          font-size: 28px;
+        }
+
+        .service-banner p {
+          font-size: 16px;
+        }
+
+        .contact-form {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .service-banner h1 {
+          font-size: 24px;
+        }
+
+        .service-banner p {
+          font-size: 14px;
+        }
+
+        .contact-form {
+          padding: 15px;
+        }
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2><a href="./index.html" style="color: white; text-decoration: none;  ">LinhLoanSG</a></h2>
+      <div id="menu-toggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href="./index.html"><i class="fas fa-home"></i> Trang chủ</a>
+          </li>
+          <li>
+            <a href="./services.html"><i class="fas fa-tools"></i> Dịch vụ</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              ><i class="fas fa-info-circle"></i> Giới thiệu</a
+            >
+          </li>
+          <li>
+            <a href="./contact.html"><i class="fas fa-envelope"></i> Liên hệ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="services" aria-labelledby="services-heading">
+      <!-- Thêm banner dịch vụ -->
+      <div class="service-banner">
+        <h1>Vật Liệu Xây Dựng Chất Lượng Nhất Tại Đà Nẵng</h1>
+        <p>
+          Cung cấp xi măng, sắt thép, gạch, đá, cát, sỏi và nhiều dịch vụ xây
+          dựng khác với giá cạnh tranh và giao hàng nhanh chóng.
+        </p>
+      </div>
+
+      <h2 id="services-heading">Dịch vụ của chúng tôi</h2>
+      <div class="services">
+        <div class="service-card">
+          <span class="badge">Hot</span>
+          <i class="fas fa-cubes fa-3x" aria-hidden="true"></i>
+          <h3>Phân phối xi măng</h3>
+          <p>
+            Cung cấp xi măng chất lượng, giá cả hợp lý, giao hàng nhanh chóng.
+          </p>
+          <button aria-label="Đặt hàng xi măng ngay">Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-dumbbell fa-3x" aria-hidden="true"></i>
+          <h3>Vật liệu sắt thép</h3>
+          <p>
+            Thép xây dựng đạt chuẩn, đa dạng kích thước phục vụ mọi công trình.
+          </p>
+          <button aria-label="Đặt hàng sắt thép ngay">Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mountain fa-3x" aria-hidden="true"></i>
+          <h3>Đá, cát, sỏi</h3>
+          <p>
+            Nguyên liệu chất lượng cao, nguồn gốc rõ ràng cho mọi công trình.
+          </p>
+          <button aria-label="Đặt hàng đá, cát, sỏi ngay">Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-brick fa-3x" aria-hidden="true"></i>
+          <h3>Gạch xây dựng</h3>
+          <p>Gạch nung, gạch không nung bền đẹp, kích thước chuẩn xác.</p>
+          <button aria-label="Đặt hàng gạch xây dựng ngay">Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <span class="badge">Mới</span>
+          <i class="fas fa-shield-alt fa-3x" aria-hidden="true"></i>
+          <h3>Vật liệu chống thấm</h3>
+          <p>Sản phẩm chống thấm đa dạng, đảm bảo tuổi thọ công trình.</p>
+          <button aria-label="Đặt hàng vật liệu chống thấm ngay">
+            Đặt ngay
+          </button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-paint-roller fa-3x" aria-hidden="true"></i>
+          <h3>Sơn & vật liệu hoàn thiện</h3>
+          <p>Cung cấp sơn nội ngoại thất và phụ kiện hoàn thiện công trình.</p>
+          <button aria-label="Đặt hàng sơn và vật liệu hoàn thiện ngay">
+            Đặt ngay
+          </button>
+        </div>
+        <div class="service-card hidden">
+          <i class="fas fa-toilet fa-3x" aria-hidden="true"></i>
+          <h3>Thiết bị vệ sinh</h3>
+          <p>Bồn cầu, lavabo, vòi nước chính hãng, bảo hành dài hạn.</p>
+          <button aria-label="Đặt hàng thiết bị vệ sinh ngay">Đặt ngay</button>
+        </div>
+        <div class="service-card hidden">
+          <i class="fas fa-temperature-high fa-3x" aria-hidden="true"></i>
+          <h3>Vật liệu cách nhiệt</h3>
+          <p>Giải pháp cách nhiệt, cách âm tối ưu cho nhà ở và nhà xưởng.</p>
+          <button aria-label="Đặt hàng vật liệu cách nhiệt ngay">
+            Đặt ngay
+          </button>
+        </div>
+        <div class="service-card hidden">
+          <i class="fas fa-truck fa-3x" aria-hidden="true"></i>
+          <h3>Cho thuê máy móc xây dựng</h3>
+          <p>Máy trộn bê tông, giàn giáo, thiết bị thi công đầy đủ.</p>
+          <button aria-label="Thuê máy móc xây dựng ngay">Đặt ngay</button>
+        </div>
+      </div>
+      <button id="moreBtn" aria-controls="services" aria-expanded="false">
+        Xem thêm
+      </button>
+    </section>
+
+    <!-- Thêm phần đánh giá khách hàng -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading">Đánh Giá Từ Khách Hàng</h2>
+      <div class="testimonial-card">
+        <p>
+          "Linh Loan Sài Gòn cung cấp xi măng chất lượng cao, giao hàng đúng
+          hẹn. Rất đáng tin cậy!"
+        </p>
+        <span>Nguyễn Văn Hùng - Chủ thầu xây dựng</span>
+      </div>
+      <div class="testimonial-card">
+        <p>
+          "Dịch vụ thuê máy móc rất tiện lợi, giá cả hợp lý, hỗ trợ nhiệt tình."
+        </p>
+        <span>Trần Thị Bích Loan - Nhà thầu tại Đà Nẵng</span>
+      </div>
+    </section>
+
+    <!-- Thêm form liên hệ nhanh -->
+    <section class="contact-form" aria-labelledby="contact-form-heading">
+      <h3 id="contact-form-heading">Yêu Cầu Báo Giá</h3>
+      <form>
+        <input
+          type="text"
+          name="name"
+          placeholder="Họ và tên"
+          required
+          aria-label="Nhập họ và tên"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Số điện thoại"
+          required
+          aria-label="Nhập số điện thoại"
+        />
+        <textarea
+          name="message"
+          placeholder="Yêu cầu của bạn (ví dụ: báo giá xi măng, thuê máy móc...)"
+          rows="4"
+          required
+          aria-label="Nhập yêu cầu của bạn"
+        ></textarea>
+        <button type="submit" aria-label="Gửi yêu cầu báo giá">
+          Gửi yêu cầu
+        </button>
+      </form>
+    </section>
+
+    <footer
+      style="
+        background-color: #0d47a1;
+        color: #fff;
+        padding: 20px 0;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        "
+      >
+        <strong style="font-size: 16px"
+          >CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ LINH LOAN SÀI GÒN</strong
+        >
+        <span>Loại hình: Công ty TNHH Một Thành Viên</span>
+        <span
+          >Địa chỉ: Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà Vang, Thành phố
+          Đà Nẵng</span
+        >
+        <span>Điện thoại: 0123456789</span>
+        <span>Trạng thái: Đang hoạt động</span>
+        <hr style="border: 0.5px solid #bbdefb; margin: 10px 0" />
+        <span style="text-align: center; display: block"
+          >© 2025 LINH LOAN SÀI GÒN. All rights reserved.</span
+        >
+      </div>
+    </footer>
+
+    <!-- Thêm nút liên hệ cố định -->
+    <a href="./contact.html" class="contact-btn" aria-label="Liên hệ ngay">
+      <i class="fas fa-phone-alt fa-2x"></i>
+    </a>
+
+    <div
+      id="loading"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          width: 60px;
+          height: 60px;
+          border: 6px solid #ccc;
+          border-top-color: #0d6efd;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        "
+      ></div>
+    </div>
+
+    <!-- Thêm Schema.org JSON-LD cho SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Linh Loan Sài Gòn",
+        "description": "Cung cấp vật liệu xây dựng chất lượng cao như xi măng, sắt thép, gạch, đá, cát, sỏi, sơn và thiết bị vệ sinh tại Đà Nẵng.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà Vang",
+          "addressLocality": "Đà Nẵng",
+          "addressCountry": "VN"
+        },
+        "telephone": "0123456789",
+        "url": "https://linhloansg.com",
+        "openingHours": "Mo-Sa 08:00-17:00",
+        "image": "https://via.placeholder.com/1200x300?text=Vật+Liệu+Xây+Dựng"
+      }
+    </script>
+
+    <script>
+      const loading = document.getElementById("loading");
+      document.querySelectorAll("header nav ul li a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = link.getAttribute("href");
+          if (loading) loading.style.display = "flex";
+          setTimeout(() => (window.location.href = href), 400);
+        });
+      });
+
+      const moreBtn = document.getElementById("moreBtn");
+      const hiddenCards = document.querySelectorAll(".service-card.hidden");
+      let isExpanded = false;
+
+      moreBtn.addEventListener("click", () => {
+        if (!isExpanded) {
+          hiddenCards.forEach((card) => card.classList.remove("hidden"));
+          moreBtn.textContent = "Thu gọn";
+          moreBtn.setAttribute("aria-expanded", "true");
+          isExpanded = true;
+        } else {
+          hiddenCards.forEach((card) => card.classList.add("hidden"));
+          moreBtn.textContent = "Xem thêm";
+          moreBtn.setAttribute("aria-expanded", "false");
+          isExpanded = false;
+        }
+      });
+
+      const serviceCards = document.querySelectorAll(".service-card");
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      serviceCards.forEach((card) => observer.observe(card));
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+      });
+
+      // Xử lý form liên hệ (thêm JavaScript)
+      const contactForm = document.querySelector(".contact-form form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Yêu cầu của bạn đã được gửi! Chúng tôi sẽ liên hệ sớm.");
+          contactForm.reset();
+        });
+      }
+    </script>
+  </body>
+</html>

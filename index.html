@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LinhLoanSG - Nhà cung cấp vật liệu xây dựng uy tín, chất lượng cao tại Đà Nẵng. Xi măng, sắt thép, đá, cát, sỏi, sơn và cách nhiệt."
+    />
+    <meta
+      name="keywords"
+      content="vật liệu xây dựng, xi măng, sắt thép, đá cát sỏi, sơn cách nhiệt, LinhLoanSG, Đà Nẵng"
+    />
+    <meta name="author" content="LinhLoanSG" />
+    <meta name="robots" content="index, follow" />
+    <title>LinhLoanSG - Vật liệu xây dựng chất lượng cao</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "LinhLoanSG",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà Vang",
+          "addressLocality": "Đà Nẵng",
+          "addressCountry": "VN"
+        },
+        "telephone": "0123456789",
+        "email": "info@linhloansg.com",
+        "openingHours": "Mo-Sa 08:00-17:00",
+        "url": "https://yourwebsite.com"
+      }
+    </script>
+    <style>
+      /* Reset cơ bản */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: #f8f9fa;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: linear-gradient(90deg, #0d6efd, #0056b3);
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h2 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        margin: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #ffc107;
+        transform: translateY(-2px);
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("./pic/new.png") center/cover no-repeat;
+        border-bottom: 6px solid #0d6efd;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(13, 110, 253, 0.65);
+      }
+      .hero-content {
+        position: relative;
+        text-align: center;
+        max-width: 800px;
+        color: #fff;
+        opacity: 0;
+        animation: fadeInUp 1.2s ease forwards;
+      }
+      .hero-content h1 {
+        font-family: "Oswald", sans-serif;
+        font-size: 56px;
+        margin-bottom: 25px;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      }
+      .hero-content p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+      .hero-content .btn {
+        background: #ffc107;
+        color: #0d6efd;
+        font-weight: bold;
+        padding: 14px 35px;
+        border-radius: 10px;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .hero-content .btn:hover {
+        background: #ffd54f;
+        transform: scale(1.08);
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Section Titles */
+      section h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #0d6efd;
+        position: relative;
+      }
+      section h2::after {
+        content: "";
+        display: block;
+        margin: 10px auto 0;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #0d6efd, #66b2ff);
+        border-radius: 3px;
+      }
+
+      /* Services */
+      #services {
+        padding: 80px 20px;
+        background: #f0f4ff;
+      }
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .service-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      .service-card.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+      }
+      .service-card i {
+        font-size: 50px;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #0d6efd, #66b2ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .service-card h3 {
+        font-size: 24px;
+        color: #0d6efd;
+        margin-bottom: 15px;
+      }
+      .service-card p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+        min-height: 80px;
+      }
+      .service-card button {
+        background: #0d6efd;
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.3s ease;
+      }
+      .service-card button:hover {
+        background: #0056b3;
+      }
+
+      /* Why Choose Us */
+      #why-us {
+        padding: 80px 20px;
+        background: #fff;
+      }
+      .why-us-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .why-us-item {
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+      }
+      .why-us-item.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .why-us-item i {
+        font-size: 48px;
+        margin-bottom: 15px;
+        color: #0d6efd;
+      }
+      .why-us-item h3 {
+        font-size: 22px;
+        color: #0d6efd;
+        margin-bottom: 10px;
+      }
+      .why-us-item p {
+        font-size: 16px;
+        color: #555;
+      }
+
+      /* Projects */
+      #projects {
+        padding: 80px 20px;
+        background: #f8f9fa;
+      }
+      .projects-wrapper {
+        display: flex;
+        overflow-x: auto;
+        gap: 25px;
+        padding-bottom: 15px;
+        scroll-behavior: smooth;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .project-card {
+        flex: 0 0 320px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      .project-card.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+      }
+      .project-card .proj-content {
+        padding: 20px;
+      }
+      .project-card .proj-content h4 {
+        color: #0d6efd;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .project-card .proj-content p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      /* Testimonials */
+      #testimonials {
+        padding: 80px 20px;
+        background: #f0f4ff;
+      }
+      .testimonials-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .testimonial-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+      }
+      .testimonial-card.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .testimonial-card i {
+        font-size: 40px;
+        color: #0d6efd;
+        margin-bottom: 15px;
+      }
+      .testimonial-card p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+      .testimonial-card h4 {
+        font-size: 18px;
+        color: #0d6efd;
+      }
+
+      /* Contact */
+      #contact {
+        padding: 80px 20px;
+        background: #fff;
+      }
+      .contact-form {
+        max-width: 700px;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+      }
+      .contact-form.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 14px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #0d6efd;
+      }
+      .contact-form button {
+        background: #0d6efd;
+        color: #fff;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .contact-form button:hover {
+        background: #0056b3;
+      }
+      .contact-info p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .contact-info i {
+        color: #0d6efd;
+        margin-right: 10px;
+      }
+      .social-links a {
+        font-size: 24px;
+        color: #fff;
+        background: #0d6efd;
+        padding: 10px;
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: background 0.3s ease;
+      }
+      .social-links a:hover {
+        background: #0056b3;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(90deg, #0d47a1, #0d6efd);
+        color: #fff;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      footer a {
+        color: #ffc107;
+        transition: color 0.3s ease;
+      }
+      footer a:hover {
+        color: #ffd54f;
+        text-decoration: underline;
+      }
+
+      /* Scrollbar */
+      .projects-wrapper::-webkit-scrollbar {
+        height: 10px;
+      }
+      .projects-wrapper::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+      }
+      .projects-wrapper::-webkit-scrollbar-thumb {
+        background: #0d6efd;
+        border-radius: 5px;
+      }
+
+      /* Loading */
+      #loading {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 斥0 9999;
+        justify-content: center;
+        align-items: center;
+      }
+      #loading div {
+        width: 70px;
+        height: 70px;
+        border: 8px solid #ccc;
+        border-top-color: #0d6efd;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          padding: 15px;
+          gap: 15px;
+        }
+        header h2 {
+          font-size: 26px;
+        }
+        nav ul {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .hero {
+          height: 70vh;
+        }
+        .hero-content h1 {
+          font-size: 36px;
+        }
+        .hero-content p {
+          font-size: 18px;
+        }
+        .hero-content .btn {
+          padding: 12px 25px;
+          font-size: 16px;
+        }
+        .services,
+        .why-us-content,
+        .testimonials-wrapper {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .service-card h3,
+        .why-us-item h3 {
+          font-size: 20px;
+        }
+        .service-card p,
+        .why-us-item p,
+        .testimonial-card p {
+          font-size: 15px;
+          min-height: auto;
+        }
+        .service-card i,
+        .why-us-item i,
+        .testimonial-card i {
+          font-size: 40px;
+        }
+        .projects-wrapper {
+          flex-direction: column;
+          overflow-x: hidden;
+        }
+        .project-card {
+          flex: none;
+          width: 100%;
+        }
+        .contact-form {
+          width: 100%;
+          padding: 0 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .menu-toggle {
+          display: block;
+          position: absolute;
+          top: 20px;
+          right: 25px;
+          z-index: 1100;
+          font-size: 24px;
+        }
+        nav {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+          width: 100%;
+        }
+        nav.active {
+          max-height: 600px;
+        }
+        nav ul li a {
+          padding: 12px 0;
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 992px) and (min-width: 769px) {
+        .services,
+        .why-us-content,
+        .testimonials-wrapper {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero-content h1 {
+          font-size: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2><a href="./index.html">LinhLoanSG</a></h2>
+      <div id="menu-toggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href="./index.html"><i class="fas fa-home"></i> Trang chủ</a>
+          </li>
+          <li>
+            <a href="./services.html"><i class="fas fa-tools"></i> Dịch vụ</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              ><i class="fas fa-info-circle"></i> Giới thiệu</a
+            >
+          </li>
+          <li>
+            <a href="./contact.html"><i class="fas fa-envelope"></i> Liên hệ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Chào mừng đến với LinhLoanSG</h1>
+        <p>
+          Nhà cung cấp vật liệu xây dựng hàng đầu tại Đà Nẵng. Chúng tôi cam kết
+          mang đến sản phẩm chất lượng cao, dịch vụ tận tâm và giải pháp tối ưu
+          cho mọi công trình.
+        </p>
+        <a href="./services.html" class="btn">Khám phá dịch vụ</a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Dịch vụ của chúng tôi</h2>
+      <div class="services">
+        <div class="service-card">
+          <i class="fas fa-industry"></i>
+          <h3>Phân phối xi măng</h3>
+          <p>
+            Cung cấp xi măng chất lượng cao từ các thương hiệu hàng đầu, đảm bảo
+            giao hàng nhanh chóng và đúng tiến độ.
+          </p>
+          <button>Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-dumbbell"></i>
+          <h3>Vật liệu sắt thép</h3>
+          <p>
+            Sắt thép đạt chuẩn quốc tế, đa dạng kích thước, phù hợp cho mọi loại
+            công trình từ dân dụng đến công nghiệp.
+          </p>
+          <button>Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mountain"></i>
+          <h3>Đá, cát, sỏi</h3>
+          <p>
+            Nguyên liệu xây dựng chất lượng cao, nguồn gốc rõ ràng, đáp ứng mọi
+            nhu cầu xây dựng.
+          </p>
+          <button>Đặt ngay</button>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-brush"></i>
+          <h3>Sơn & cách nhiệt</h3>
+          <p>
+            Sản phẩm sơn và vật liệu cách nhiệt bền bỉ, an toàn, mang lại hiệu
+            quả tối ưu cho công trình của bạn.
+          </p>
+          <button>Đặt ngay</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us">
+      <h2>Tại sao chọn chúng tôi</h2>
+      <div class="why-us-content">
+        <div class="why-us-item">
+          <i class="fas fa-star"></i>
+          <h3>Chất lượng hàng đầu</h3>
+          <p>
+            Sản phẩm đạt tiêu chuẩn cao, kiểm định nghiêm ngặt, đảm bảo độ bền
+            và an toàn.
+          </p>
+        </div>
+        <div class="why-us-item">
+          <i class="fas fa-truck"></i>
+          <h3>Giao hàng nhanh chóng</h3>
+          <p>
+            Dịch vụ vận chuyển chuyên nghiệp, đúng tiến độ, tiết kiệm thời gian
+            cho khách hàng.
+          </p>
+        </div>
+        <div class="why-us-item">
+          <i class="fas fa-handshake"></i>
+          <h3>Uy tín & tận tâm</h3>
+          <p>Cam kết phục vụ tận tình, đặt lợi ích khách hàng lên hàng đầu.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Dự án tiêu biểu</h2>
+      <div class="projects-wrapper">
+        <div class="project-card">
+          <!-- <img src="./pic/project1.jpg" alt="Dự án dân dụng" /> -->
+          <div class="proj-content">
+            <h4>Dự án A</h4>
+            <p>
+              Cung cấp vật liệu cho công trình dân dụng quy mô lớn tại Đà Nẵng.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <!-- <img src="./pic/project2.jpg" alt="Dự án khu đô thị" /> -->
+          <div class="proj-content">
+            <h4>Dự án B</h4>
+            <p>
+              Hỗ trợ vật liệu cho khu đô thị hiện đại, đảm bảo chất lượng vượt
+              trội.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <!-- <img src="./pic/project3.jpg" alt="Dự án thương mại" /> -->
+          <div class="proj-content">
+            <h4>Dự án C</h4>
+            <p>
+              Cung cấp nguyên vật liệu cho các công trình thương mại quy mô lớn.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <!-- <img src="./pic/project4.jpg" alt="Dự án công nghiệp" /> -->
+          <div class="proj-content">
+            <h4>Dự án D</h4>
+            <p>
+              Hỗ trợ vật liệu cho nhà xưởng công nghiệp, giao hàng nhanh chóng.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <!-- <img src="./pic/project5.jpg" alt="Dự án dân dụng và thương mại" /> -->
+          <div class="proj-content">
+            <h4>Dự án E</h4>
+            <p>
+              Cung cấp vật liệu cho các công trình dân dụng và thương mại, uy
+              tín lâu dài.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2>Khách hàng nói gì</h2>
+      <div class="testimonials-wrapper">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            "LinhLoanSG cung cấp vật liệu chất lượng cao, giao hàng đúng hẹn.
+            Rất đáng tin cậy!"
+          </p>
+          <h4>Nguyễn Văn遭到0 Văn A - Chủ thầu xây dựng</h4>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            "Dịch vụ chuyên nghiệp, đội ngũ hỗ trợ nhiệt tình, sản phẩm đạt tiêu
+            chuẩn."
+          </p>
+          <h4>Trần Thị B - Quản lý dự án</h4>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            "Tôi rất hài lòng với chất lượng vật liệu và dịch vụ của
+            LinhLoanSG."
+          </p>
+          <h4>Lê Văn C - Khách hàng cá nhân</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Liên hệ với chúng tôi</h2>
+      <p
+        style="
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto 40px;
+          font-size: 18px;
+          color: #555;
+        "
+      >
+        Chúng tôi luôn sẵn sàng hỗ trợ bạn với các giải pháp vật liệu xây dựng
+        chất lượng cao. Hãy liên hệ ngay để nhận tư vấn miễn phí!
+      </p>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          max-width: 1200px;
+          margin: auto;
+        "
+      >
+        <!-- Thông tin liên hệ -->
+        <div
+          style="flex: 1; min-width: 300px; padding: 20px"
+          class="contact-info"
+        >
+          <h3 style="font-size: 24px; color: #0d6efd; margin-bottom: 20px">
+            Thông tin liên hệ
+          </h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Tổ 3, thôn Phú Hòa 1, Xã Hoà
+            Nhơn, Huyện Hoà Vang, Đà Nẵng
+          </p>
+          <p>
+            <i class="fas fa-phone"></i> <a href="tel:0123456789">0123456789</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@linhloansg.com">info@linhloansg.com</a>
+          </p>
+          <p>
+            <i class="fas fa-clock"></i> Giờ làm việc: 8:00 - 17:00, Thứ 2 - Thứ
+            7
+          </p>
+          <div style="margin-top: 20px">
+            <h4 style="font-size: 20px; color: #0d6efd">
+              Kết nối với chúng tôi
+            </h4>
+            <div
+              class="social-links"
+              style="
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: 10px;
+              "
+            >
+              <a href="https://facebook.com" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Biểu mẫu liên hệ -->
+        <div style="flex: 1; min-width: 300px; padding: 20px">
+          <form class="contact-form">
+            <label
+              for="name"
+              style="display: block; margin-bottom: 5px; font-weight: bold"
+              >Họ và tên</label
+            >
+            <div style="position: relative">
+              <i
+                class="fas fa-user"
+                style="
+                  position: absolute;
+                  left: 15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  color: #0d6efd;
+                "
+              ></i>
+              <input
+                type="text"
+                id="name"
+                placeholder="Họ và tên"
+                required
+                style="padding-left: 40px"
+              />
+            </div>
+            <label
+              for="email"
+              style="display: block; margin-bottom: 5px; font-weight: bold"
+              >Email</label
+            >
+            <div style="position: relative">
+              <i
+                class="fas fa-envelope"
+                style="
+                  position: absolute;
+                  left: 15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  color: #0d6efd;
+                "
+              ></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+                style="padding-left: 40px"
+              />
+            </div>
+            <label
+              for="phone"
+              style="display: block; margin-bottom: 5px; font-weight: bold"
+              >Số điện thoại</label
+            >
+            <div style="position: relative">
+              <i
+                class="fas fa-phone"
+                style="
+                  position: absolute;
+                  left: 15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  color: #0d6efd;
+                "
+              ></i>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Số điện thoại"
+                required
+                style="padding-left: 40px"
+              />
+            </div>
+            <label
+              for="message"
+              style="display: block; margin-bottom: 5px; font-weight: bold"
+              >Nội dung</label
+            >
+            <div style="position: relative">
+              <i
+                class="fas fa-comment"
+                style="
+                  position: absolute;
+                  left: 15px;
+                  top: 20px;
+                  color: #0d6efd;
+                "
+              ></i>
+              <textarea
+                id="message"
+                rows="6"
+                placeholder="Nội dung"
+                required
+                style="padding-left: 40px"
+              ></textarea>
+            </div>
+            <button type="submit">Gửi yêu cầu ngay</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        "
+      >
+        <strong style="font-size: 18px"
+          >CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ LINH LOAN SÀI GÒN</strong
+        >
+        <span>Loại hình: Công ty TNHH Một Thành Viên</span>
+        <span
+          >Địa chỉ: Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà Vang, Thành phố
+          Đà Nẵng</span
+        >
+        <span>Điện thoại: <a href="tel:0123456789">0123456789</a></span>
+        <span
+          >Email:
+          <a href="mailto:info@linhloansg.com">info@linhloansg.com</a></span
+        >
+        <span>Trạng thái: Đang hoạt động</span>
+        <hr style="border: 0.5px solid #bbdefb; margin: 15px 0" />
+        <span style="text-align: center; display: block"
+          >© 2025 LINH LOAN SÀI GÒN. All rights reserved.</span
+        >
+      </div>
+    </footer>
+
+    <!-- Loading -->
+    <div id="loading">
+      <div></div>
+    </div>
+
+    <script>
+      // Loading khi chuyển trang
+      const loading = document.getElementById("loading");
+      document.querySelectorAll("header nav ul li a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = link.getAttribute("href");
+          if (loading) loading.style.display = "flex";
+          setTimeout(() => (window.location.href = href), 400);
+        });
+      });
+
+      // Animation fade-in
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.3, rootMargin: "0px 0px -100px 0px" }
+      );
+      document
+        .querySelectorAll(
+          ".service-card, .project-card, .why-us-item, .testimonial-card, .contact-form"
+        )
+        .forEach((el) => observer.observe(el));
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+      });
+
+      // Form submission feedback
+      document
+        .querySelector(".contact-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert(
+            "Cảm ơn bạn đã gửi thông tin! Chúng tôi sẽ liên hệ sớm nhất có thể."
+          );
+          e.target.reset();
+        });
+    </script>
+  </body>
+</html>

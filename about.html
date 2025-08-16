@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinhLoanSG - Hồ sơ năng lực</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Linh Loan Sài Gòn - Hồ sơ năng lực của Công ty TNHH Thương mại và Dịch vụ Linh Loan Sài Gòn, chuyên cung cấp vật liệu xây dựng và dịch vụ tại Đà Nẵng."
+    />
+    <meta
+      name="keywords"
+      content="hồ sơ năng lực, linh loan sài gòn, vật liệu xây dựng, dịch vụ xây dựng, đà nẵng, công ty tnhh"
+    />
+    <meta name="author" content="Linh Loan Sài Gòn" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta property="og:title" content="LinhLoanSG - Hồ sơ năng lực" />
+    <meta property="og:description" content="Khám phá hồ sơ năng lực của Linh Loan Sài Gòn, chuyên cung cấp vật liệu xây dựng chất lượng tại Đà Nẵng." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linhloansg.com/about.html" />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=LinhLoanSG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LinhLoanSG - Hồ sơ năng lực" />
+    <meta name="twitter:description" content="Hồ sơ năng lực của Linh Loan Sài Gòn tại Đà Nẵng." />
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630?text=LinhLoanSG" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Font và Icon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        color: #333;
+        scroll-behavior: smooth;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: linear-gradient(90deg, #0d6efd, #0056b3);
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      }
+      header h2 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        margin: 0;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li a {
+        color: #fff;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+        line-height: 1;
+        display: inline-block;
+        padding: 0;
+        vertical-align: middle;
+      }
+      nav ul li a:hover {
+        color: #ffc107;
+        transform: translateY(-2px); /* Thêm animation di chuyển lên */
+      }
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Profile Section */
+      .profile {
+        background: #f0f4ff;
+        padding: 60px 20px;
+      }
+      .profile__wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+      }
+      .profile__title {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: #0d6efd;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .profile__title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 80px;
+        height: 4px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #0d6efd, #66b2ff);
+      }
+      .profile__lead {
+        font-size: 16px;
+        color: #364152;
+        margin-bottom: 30px;
+      }
+      .profile__section {
+        font-size: 20px;
+        font-weight: 700;
+        color: #12263f;
+        margin-top: 30px;
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 28px;
+      }
+      .profile__section::before {
+        content: "\f0da";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 18px;
+        color: #0d6efd;
+      }
+      .profile__text {
+        font-size: 16px;
+        color: #444e5a;
+        text-align: justify;
+        margin-bottom: 16px;
+      }
+
+      /* Contact grid */
+      .profile__contact {
+        margin-top: 30px;
+        background: #f5f9ff;
+        border: 1px solid #e0ecff;
+        padding: 20px;
+        border-radius: 14px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 40px;
+      }
+      @media (max-width: 768px) {
+        .profile__contact {
+          grid-template-columns: 1fr;
+        }
+      }
+      .profile__contact-title {
+        font-weight: 700;
+        color: #0d3b66;
+        margin-bottom: 10px;
+        grid-column: 1/-1;
+        font-size: 18px;
+      }
+      .profile__contact .label {
+        display: inline-block;
+        min-width: 120px;
+        color: #2a2f36;
+        font-weight: 600;
+      }
+
+      /* Badges */
+      .badge {
+        display: inline-block;
+        background: #0d6efd;
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 8px;
+      }
+
+      /* Animation */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-up.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Footer */
+      footer {
+        background: #0d47a1;
+        color: #fff;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 40px;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+      }
+      footer a {
+        color: #ffc107;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      footer hr {
+        border: 0.5px solid #bbdefb;
+        margin: 12px 0;
+        width: 80%;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+          position: absolute;
+          top: 20px;
+          right: 25px;
+          z-index: 1100;
+        }
+
+        nav {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background: linear-gradient(90deg, #0d6efd, #0056b3);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav.active {
+          max-height: 300px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+
+        nav ul li a {
+          padding: 10px 20px;
+          font-size: 18px;
+          color: #fff;
+          text-align: center;
+        }
+
+        nav ul li a:hover {
+          background: #0056b3;
+          color: #ffc107;
+          transform: translateY(-2px); /* Giữ animation trong mobile */
+        }
+
+        header {
+          padding: 15px 20px;
+        }
+        .profile {
+          padding: 30px 10px;
+        }
+        .profile__wrap {
+          padding: 20px;
+        }
+        .profile__title {
+          font-size: 22px;
+          text-align: center;
+        }
+        .profile__lead {
+          font-size: 14px;
+        }
+        .profile__section {
+          font-size: 18px;
+          padding-left: 20px;
+        }
+        .profile__section::before {
+          font-size: 16px;
+          top: 2px;
+        }
+        .profile__text {
+          font-size: 14px;
+        }
+        .profile__contact {
+          display: block;
+          padding: 15px;
+        }
+        .profile__contact p {
+          margin-bottom: 12px;
+          font-size: 14px;
+        }
+        .profile__contact .label {
+          min-width: 100px;
+          font-weight: 600;
+        }
+        .profile__contact-title {
+          font-size: 16px;
+          margin-bottom: 12px;
+          text-align: center;
+        }
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+     <header>
+      <h2><a href="./index.html" style="color: white; text-decoration: none;  ">LinhLoanSG</a></h2>
+      <div id="menu-toggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href="./index.html"><i class="fas fa-home"></i> Trang chủ</a>
+          </li>
+          <li>
+            <a href="./services.html"><i class="fas fa-tools"></i> Dịch vụ</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              ><i class="fas fa-info-circle"></i> Giới thiệu</a
+            >
+          </li>
+          <li>
+            <a href="./contact.html"><i class="fas fa-envelope"></i> Liên hệ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Profile -->
+    <main>
+      <section id="about" class="profile">
+        <div class="profile__wrap fade-up">
+          <h2 class="profile__title">Giới thiệu & Hồ sơ năng lực</h2>
+          <p class="profile__lead fade-up">
+            CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ LINH LOAN SÀI GÒN được thành lập
+            năm 2022, trụ sở tại Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà
+            Vang, Thành phố Đà Nẵng.<br />
+            <span class="badge">Đại diện pháp luật:</span> Lê Thị Hiệp<br />
+            <span class="badge">Điện thoại:</span> 0903914790
+          </p>
+
+          <h3 class="profile__section fade-up">
+            Lịch sử hình thành và phát triển
+          </h3>
+          <p class="profile__text fade-up">
+            Công ty được cấp giấy phép kinh doanh từ ngày 01/06/2022 và đã hoạt
+            động ổn định 3 năm qua, chuyên cung cấp các dịch vụ thương mại và
+            vật liệu xây dựng.
+          </p>
+
+          <h3 class="profile__section fade-up">Cơ cấu tổ chức</h3>
+          <p class="profile__text fade-up">
+            Ban Giám đốc gồm các thành viên quản lý chính, điều hành hoạt động
+            kinh doanh và các phòng ban hỗ trợ, đảm bảo mọi khâu vận hành trơn
+            tru.
+          </p>
+
+          <h3 class="profile__section fade-up">Lĩnh vực kinh doanh</h3>
+          <p class="profile__text fade-up">
+            Hoạt động trong lĩnh vực thương mại và cung ứng dịch vụ xây dựng,
+            cung cấp vật liệu xây dựng uy tín và chất lượng.
+          </p>
+
+          <h3 class="profile__section fade-up">Năng lực cung ứng</h3>
+          <p class="profile__text fade-up">
+            Sở hữu hệ thống kho bãi rộng rãi và đội ngũ nhân sự chuyên nghiệp,
+            đảm bảo cung ứng nhanh chóng và đúng tiến độ.
+          </p>
+
+          <h3 class="profile__section fade-up">Dự án tiêu biểu</h3>
+          <p class="profile__text fade-up">
+            Các dự án đã thực hiện: cung cấp vật liệu cho các công trình dân
+            dụng, khu đô thị và các dự án thương mại lớn tại Đà Nẵng.
+          </p>
+
+          <h3 class="profile__section fade-up">Thông tin pháp lý & liên hệ</h3>
+          <div class="profile__contact fade-up">
+            <div class="profile__contact-title">Chi tiết pháp lý</div>
+            <p>
+              <span class="label">Tên công ty:</span> CÔNG TY TNHH THƯƠNG MẠI VÀ
+              DỊCH VỤ LINH LOAN SÀI GÒN
+            </p>
+            <p>
+              <span class="label">Loại hình:</span> Công ty TNHH Một Thành Viên
+            </p>
+            <p><span class="label">Mã số thuế:</span> 0402151249</p>
+            <p>
+              <span class="label">Địa chỉ:</span> Tổ 3, thôn Phú Hòa 1, Xã Hoà
+              Nhơn, Huyện Hoà Vang, TP. Đà Nẵng
+            </p>
+            <p><span class="label">Đại diện pháp luật:</span> Lê Thị Hiệp</p>
+            <p><span class="label">Ngày cấp giấy phép:</span> 01/06/2022</p>
+            <p>
+              <span class="label">Ngày hoạt động:</span> 01/06/2022 (Đã hoạt
+              động 3 năm)
+            </p>
+            <p><span class="label">Điện thoại:</span> 0903914790</p>
+            <p><span class="label">Trạng thái:</span> Đang hoạt động</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer chung -->
+    <footer>
+      <div
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        "
+      >
+        <strong style="font-size: 16px"
+          >CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ LINH LOAN SÀI GÒN</strong
+        >
+        <span>Loại hình: Công ty TNHH Một Thành Viên</span>
+        <span
+          >Địa chỉ: Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà Vang, Thành phố
+          Đà Nẵng</span
+        >
+        <span>Điện thoại: 0123456789</span>
+        <span>Trạng thái: Đang hoạt động</span>
+        <hr />
+        <span style="text-align: center; display: block"
+          >© 2025 LINH LOAN SÀI GÒN. All rights reserved.</span
+        >
+      </div>
+    </footer>
+    <div
+      id="loading"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          width: 60px;
+          height: 60px;
+          border: 6px solid #ccc;
+          border-top-color: #0d6efd;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        "
+      ></div>
+    </div>
+
+    <script>
+      const loading = document.getElementById("loading");
+      document.querySelectorAll("header nav ul li a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = link.getAttribute("href");
+          if (loading) loading.style.display = "flex";
+          setTimeout(() => (window.location.href = href), 400);
+        });
+      });
+    </script>
+    <!-- Script -->
+    <script>
+      const fadeElements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      fadeElements.forEach((el) => observer.observe(el));
+      const menuToggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+      });
+    </script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Linh Loan Sài Gòn",
+        "url": "https://linhloansg.com",
+        "sameAs": [],
+        "logo": "https://via.placeholder.com/200x50?text=LinhLoanSG",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+84-903914790",
+          "contactType": "Customer Service"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tổ 3, thôn Phú Hòa 1, Xã Hoà Nhơn, Huyện Hoà Vang",
+          "addressLocality": "Đà Nẵng",
+          "addressCountry": "VN"
+        },
+        "description": "Công ty TNHH Thương mại và Dịch vụ Linh Loan Sài Gòn cung cấp vật liệu xây dựng và dịch vụ chất lượng cao tại Đà Nẵng."
+      }
+    </script>
+  </body>
+</html>
